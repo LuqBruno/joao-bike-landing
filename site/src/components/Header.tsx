@@ -4,7 +4,8 @@ import { WhatsAppIcon } from './Icons'
 
 const MobileMenu = lazy(() => import('./MobileMenu'))
 
-const base = import.meta.env.BASE_URL
+// Caminho relativo ao documento: funciona na raiz e em subpasta (GitHub Pages), também no HTML pré-renderizado.
+const base = './'
 const NAV = [
   { href: '#vitrine', label: 'Bicicletas' },
   { href: '#guia-de-aro', label: 'Guia de aro' },

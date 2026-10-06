@@ -5,7 +5,8 @@ import { store, whatsappLink } from '@/content/site'
 import { useReducedMotion } from '@/hooks/useMediaQuery'
 import { WhatsAppIcon } from './Icons'
 
-const base = import.meta.env.BASE_URL
+// Caminho relativo ao documento: funciona na raiz e em subpasta (GitHub Pages), também no HTML pré-renderizado.
+const base = './'
 
 type Props = {
   open: boolean

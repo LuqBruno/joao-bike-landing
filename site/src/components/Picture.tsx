@@ -2,7 +2,8 @@ import manifest from '@/content/images.json'
 
 type Entry = { w: number; h: number; widths: number[] }
 const images = manifest as Record<string, Entry>
-const base = import.meta.env.BASE_URL
+// Caminho relativo ao documento: funciona na raiz e em subpasta (GitHub Pages), também no HTML pré-renderizado.
+const base = './'
 
 export function imageSrc(name: string, width?: number, format: 'webp' | 'avif' = 'webp') {
   const entry = images[name]

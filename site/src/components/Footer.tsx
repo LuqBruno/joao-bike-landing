@@ -1,6 +1,7 @@
 import { hours, store, whatsappLink } from '@/content/site'
 
-const base = import.meta.env.BASE_URL
+// Caminho relativo ao documento: funciona na raiz e em subpasta (GitHub Pages), também no HTML pré-renderizado.
+const base = './'
 
 export function Footer() {
   return (
