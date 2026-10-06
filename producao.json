@@ -1,0 +1,8 @@
+{
+  "nome": "João Bike — Içara",
+  "natureza": "demo",
+  "whatsappEsperado": "5548999327190",
+  "siteDir": "site/dist",
+  "saida": "site/dist",
+  "previa": { "comando": "npm run dev", "url": "http://127.0.0.1:3031/" }
+}

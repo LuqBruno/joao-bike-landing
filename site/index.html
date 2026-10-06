@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- Prévia de demonstração: remover noindex somente na publicação autorizada pela loja. -->
+    <meta name="robots" content="noindex,nofollow" />
+    <title>João Bike | Bicicletaria em Içara desde 1983</title>
+    <meta name="description" content="Bicicletas para todas as idades, mobilidade elétrica, peças, acessórios e oficina especializada no Centro de Içara (SC). Desde 1983 pedalando com você." />
+    <meta name="theme-color" content="#0149af" />
+    <link rel="icon" href="./favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="./favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="./favicon-180.png" />
+    <link rel="preload" as="image" type="image/avif"
+      imagesrcset="./img/hero-gta-gravity-violeta-640.avif 640w, ./img/hero-gta-gravity-violeta-960.avif 960w, ./img/hero-gta-gravity-violeta-1400.avif 1400w, ./img/hero-gta-gravity-violeta-1900.avif 1900w"
+      imagesizes="(min-width: 1024px) 52vw, (min-width: 600px) 560px, 92vw" fetchpriority="high" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="João Bike" />
+    <meta property="og:title" content="João Bike | Bicicletaria em Içara desde 1983" />
+    <meta property="og:description" content="Bicicletas, elétricas, peças e oficina especializada no Centro de Içara. Fale com a loja pelo WhatsApp." />
+    <meta property="og:image" content="./og-joao-bike.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Logo da João Bike ao lado da bicicleta GTA Gravity Violeta Galáctico" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BikeStore",
+        "name": "João Bike",
+        "slogan": "Desde 1983 pedalando com você",
+        "foundingDate": "1983",
+        "image": "./og-joao-bike.jpg",
+        "logo": "./favicon-512.png",
+        "telephone": "+55-48-3432-4651",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Coronel Marcos Rovaris, 111",
+          "addressLocality": "Içara",
+          "addressRegion": "SC",
+          "postalCode": "88820-007",
+          "addressCountry": "BR"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": -28.7108689, "longitude": -49.2995597 },
+        "openingHoursSpecification": [
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:30", "closes": "12:00" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "13:30", "closes": "18:00" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:30", "closes": "12:00" }
+        ],
+        "sameAs": ["https://www.instagram.com/joaobikeicara/", "https://linktr.ee/joaobikeicara"]
+      }
+    </script>
+
+    <script>
+      // Esconde os blocos que serão revelados só quando há movimento permitido.
+      // Se o JavaScript principal não confirmar em 3 s, o conteúdo volta a aparecer.
+      (function () {
+        if (!window.matchMedia('(prefers-reduced-motion: no-preference)').matches) return
+        var root = document.documentElement
+        root.classList.add('js-motion')
+        setTimeout(function () { if (!window.__motionReady) root.classList.remove('js-motion') }, 3000)
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="padding:24px;font-family:system-ui">João Bike — Rua Coronel Marcos Rovaris, 111, Centro, Içara (SC). WhatsApp (48) 99932-7190 · Fone (48) 3432-4651.</p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

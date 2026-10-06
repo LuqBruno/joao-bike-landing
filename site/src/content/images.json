@@ -1,0 +1,182 @@
+{
+ "logo-branca": {
+  "w": 640,
+  "h": 603,
+  "widths": [
+   640
+  ]
+ },
+ "logo-azul": {
+  "w": 640,
+  "h": 603,
+  "widths": [
+   640
+  ]
+ },
+ "hero-gta-gravity-violeta": {
+  "w": 3024,
+  "h": 3468,
+  "widths": [
+   640,
+   960,
+   1400,
+   1900
+  ]
+ },
+ "gta-gravity-branca": {
+  "w": 3024,
+  "h": 3427,
+  "widths": [
+   480,
+   800,
+   1200
+  ]
+ },
+ "viking-tuff-25": {
+  "w": 3024,
+  "h": 3427,
+  "widths": [
+   480,
+   800,
+   1200
+  ]
+ },
+ "mtb-dkr-24": {
+  "w": 3024,
+  "h": 3427,
+  "widths": [
+   480,
+   800,
+   1200
+  ]
+ },
+ "mtb-dkr-20": {
+  "w": 3024,
+  "h": 3427,
+  "widths": [
+   480,
+   800,
+   1200
+  ]
+ },
+ "ace-duos-500w": {
+  "w": 1088,
+  "h": 468,
+  "widths": [
+   480,
+   800,
+   1088
+  ]
+ },
+ "loja-interior": {
+  "w": 502,
+  "h": 1242,
+  "widths": [
+   480,
+   502
+  ]
+ },
+ "oficina-mecanico": {
+  "w": 983,
+  "h": 398,
+  "widths": [
+   640,
+   983
+  ]
+ },
+ "oficina-roda": {
+  "w": 475,
+  "h": 999,
+  "widths": [
+   475
+  ]
+ },
+ "fachada-atual": {
+  "w": 1080,
+  "h": 810,
+  "widths": [
+   640,
+   1080
+  ]
+ },
+ "equipe-fachada": {
+  "w": 1080,
+  "h": 929,
+  "widths": [
+   640,
+   1080
+  ]
+ },
+ "historia-1-foto-antiga": {
+  "w": 1080,
+  "h": 788,
+  "widths": [
+   640,
+   1080
+  ]
+ },
+ "historia-2-bicicletaria-do-joao": {
+  "w": 1080,
+  "h": 842,
+  "widths": [
+   640,
+   1080
+  ]
+ },
+ "historia-3-familia": {
+  "w": 1080,
+  "h": 842,
+  "widths": [
+   640,
+   1080
+  ]
+ },
+ "historia-4-fachada-antiga": {
+  "w": 1080,
+  "h": 864,
+  "widths": [
+   640,
+   1080
+  ]
+ },
+ "historia-5-interior": {
+  "w": 1080,
+  "h": 864,
+  "widths": [
+   640,
+   1080
+  ]
+ },
+ "historia-6-fachada-xadrez": {
+  "w": 1080,
+  "h": 864,
+  "widths": [
+   640,
+   1080
+  ]
+ },
+ "historia-7-entrega": {
+  "w": 1080,
+  "h": 756,
+  "widths": [
+   640,
+   1080
+  ]
+ },
+ "historia-8-equipe": {
+  "w": 1080,
+  "h": 929,
+  "widths": [
+   640,
+   1080
+  ]
+ },
+ "historia-9-fachada-nova": {
+  "w": 1080,
+  "h": 864,
+  "widths": [
+   640,
+   1080
+  ]
+ }
+}

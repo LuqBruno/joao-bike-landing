@@ -1,0 +1,11 @@
+{
+  "name": "joao-bike-icara",
+  "private": true,
+  "description": "Atalhos para o projeto Vite em site/ (usados pelo op).",
+  "scripts": {
+    "dev": "npm --prefix site run dev",
+    "check": "npm --prefix site run check",
+    "build": "npm --prefix site run build",
+    "assets": "npm --prefix site run assets"
+  }
+}
