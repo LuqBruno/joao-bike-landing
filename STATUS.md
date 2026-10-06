@@ -44,6 +44,12 @@ Atualizado em: 06/10/2026. Esta ficha é técnica; negociação e recebimento fi
 - Prévia em https://luqbruno.github.io/joao-bike-landing/, com `noindex` ativo e aviso de demo no rodapé.
 - No primeiro deploy, as imagens falharam: o HTML pré-renderizado usava a base `/`. Corrigido com caminhos relativos `./img/` e reenviado.
 
+## Correção — guia de aro (06/10/2026)
+- **Defeito relatado por Bruno:** ao arrastar o controle de idade de um lado para o outro, a roda ia saindo do lugar até sumir.
+- **Causa:** cada novo movimento recalculava a origem da transformação (`svgOrigin`) por cima de uma animação ainda em andamento, e esses ajustes se acumulavam.
+- **Correção:** a pose da roda (centro, raio e giro) é guardada em números absolutos e o `transform` é sempre recalculado a partir deles. O giro é o avanço dividido pelo raio, quadro a quadro.
+- **Verificado:** 6 arrastos rápidos de ida e volta com Playwright; a roda terminou na posição exata do aro 20, dentro da área. Build ok; `op revisar` `2026-10-06_180001-revisar` com 0 achados.
+
 ## Próxima ação
 Bruno revisar a prévia (`cd site && npm run dev`) e decidir se e quando apresentar à loja, conforme o
 fluxo do PIPELINE (primeiro contato antes de enviar a demo).

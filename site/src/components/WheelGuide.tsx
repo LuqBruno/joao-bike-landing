@@ -24,31 +24,45 @@ export function WheelGuide() {
   const [index, setIndex] = useState(4)
   const placement = useRef<SVGGElement>(null)
   const spin = useRef<SVGGElement>(null)
-  const last = useRef({ index: 4, rotation: 0 })
+  // Pose absoluta da roda. O transform é sempre recalculado a partir destes números,
+  // então interrupções em sequência (arrastar o controle) não acumulam deslocamento.
+  const pose = useRef({ ...geometry(4), rot: 0 })
+  const tween = useRef<gsap.core.Tween | null>(null)
   const stage = wheelGuide[index]
 
   useEffect(() => {
-    const from = geometry(last.current.index)
-    const to = geometry(index)
-    // Rolar sem deslizar: o ângulo percorrido é a distância dividida pelo raio médio.
-    const distance = to.cx - from.cx
-    const rotation = last.current.rotation + (distance / ((from.r + to.r) / 2)) * (180 / Math.PI)
-    last.current = { index, rotation }
-    const props = { x: to.cx, y: to.cy, scale: to.r / 100 }
+    const target = geometry(index)
+    const p = pose.current
+    const paint = () => {
+      placement.current?.setAttribute('transform', `translate(${p.cx} ${GROUND - p.r}) scale(${p.r / 100})`)
+      spin.current?.setAttribute('transform', `rotate(${p.rot})`)
+    }
+    tween.current?.kill()
     if (reduced) {
-      gsap.set(placement.current, { ...props, svgOrigin: '0 0' })
-      gsap.set(spin.current, { rotation, svgOrigin: '0 0' })
+      p.rot += ((target.cx - p.cx) / target.r) * (180 / Math.PI)
+      p.cx = target.cx
+      p.r = target.r
+      paint()
       return
     }
-    // gsap.to parte do valor atual: trocar de idade no meio da animação apenas redireciona a roda.
-    gsap.to(placement.current, { ...props, svgOrigin: '0 0', duration: 0.9, ease: 'power3.out', overwrite: 'auto' })
-    gsap.to(spin.current, { rotation, svgOrigin: '0 0', duration: 0.9, ease: 'power3.out', overwrite: 'auto' })
+    // Rolar sem deslizar: a cada quadro, o giro é o avanço horizontal dividido pelo raio atual.
+    // gsap.to parte da pose atual, então trocar de idade no meio do movimento só redireciona a roda.
+    let prevCx = p.cx
+    tween.current = gsap.to(p, {
+      cx: target.cx,
+      r: target.r,
+      duration: 0.9,
+      ease: 'power3.out',
+      onUpdate: () => {
+        p.rot += ((p.cx - prevCx) / p.r) * (180 / Math.PI)
+        prevCx = p.cx
+        paint()
+      },
+    })
+    return () => { tween.current?.kill() }
   }, [index, reduced])
 
-  useEffect(() => {
-    const g = geometry(4)
-    gsap.set(placement.current, { x: g.cx, y: g.cy, scale: g.r / 100, svgOrigin: '0 0' })
-  }, [])
+  const initial = geometry(4)
 
   const adult = stage.id === 'adulto'
   // Rodas 26" e 27,5" tocando o chão no mesmo ponto da roda de 29".
@@ -89,7 +103,7 @@ export function WheelGuide() {
                   {ghost(27.5)}
                 </g>
               )}
-              <g ref={placement}>
+              <g ref={placement} transform={`translate(${initial.cx} ${GROUND - initial.r}) scale(${initial.r / 100})`}>
                 <g ref={spin}>
                   {/* Pneu com cravos */}
                   <circle r="93" fill="none" stroke="#061a3f" strokeWidth="14" />
