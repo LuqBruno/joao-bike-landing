@@ -39,6 +39,12 @@ Atualizado em: 06/10/2026. Esta ficha é técnica; negociação e recebimento fi
 - Horário em feriados (o Google sinaliza variação); URL do TikTok, se a loja quiser exibir.
 - Melhorar o LCP no celular (tamanho da foto do hero e fontes), se a demo virar projeto.
 
+## Alterações após o commit 92e8da0 (06/10/2026, não commitadas)
+- `.github/workflows/deploy-pages.yml`: workflow de GitHub Pages (build em `site/`, publica `site/dist`), pedido por Bruno ("faça uma page").
+- `site/index.html`: `og:url`, `og:image` e dados estruturados (`url`, `image`, `logo`) com URLs absolutas de `https://luqbruno.github.io/joao-bike-landing/`.
+- Verificado em 06/10/2026: `npm run build` (check, build e pré-renderização) passou depois dessas mudanças.
+- Tornar o repositório público e ativar o Pages foi bloqueado pela verificação de segurança do Claude Code. O repositório continua privado e a página não está publicada; publicar depende de decisão de Bruno.
+
 ## Próxima ação
 Bruno revisar a prévia (`cd site && npm run dev`) e decidir se e quando apresentar à loja, conforme o
 fluxo do PIPELINE (primeiro contato antes de enviar a demo).
